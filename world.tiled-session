@@ -3,10 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Content/tilemap.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
-        "bin",
-        "."
+        ".",
+        "bin"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -35,7 +35,6 @@
     "map.tileWidth": 16,
     "map.width": 211,
     "openFiles": [
-        "Content/tilemap.tmx"
     ],
     "project": "world.tiled-project",
     "recentFiles": [

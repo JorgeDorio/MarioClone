@@ -13,7 +13,7 @@ public class Map
     public static readonly int TILE_SIZE = 16;
 
     public static readonly List<List<int>> Tiles = new();
-    private static Rectangle[,] Colliders { get; set;}
+    private static Rectangle[,] Colliders { get; set; }
 
     private static void GetTileMap()
     {
@@ -38,14 +38,21 @@ public class Map
         GetTileMap();
         Colliders = new Rectangle[Tiles.Count, Tiles[0].Count];
 
-        _target = new(Globals.GraphicsDevice, Tiles.Count * TILE_SIZE, Tiles[0].Count * TILE_SIZE);
+        _target = new(Globals.GraphicsDevice, Tiles[0].Count * TILE_SIZE, Tiles.Count * TILE_SIZE);
 
         var tile1tex = Globals.Content.Load<Texture2D>("assets/world/tile1");
         var tile2tex = Globals.Content.Load<Texture2D>("assets/world/tile2");
+        var tile3tex = Globals.Content.Load<Texture2D>("assets/world/tile3");
+        var tile4tex = Globals.Content.Load<Texture2D>("assets/world/tile4");
+        var tile5tex = Globals.Content.Load<Texture2D>("assets/world/tile5");
+        var tile6tex = Globals.Content.Load<Texture2D>("assets/world/tile6");
+        var tile7tex = Globals.Content.Load<Texture2D>("assets/world/tile7");
+        var tile8tex = Globals.Content.Load<Texture2D>("assets/world/tile8");
 
         Globals.GraphicsDevice.SetRenderTarget(_target);
         Globals.GraphicsDevice.Clear(Color.Transparent);
         Globals.SpriteBatch.Begin();
+        Texture2D tex;
 
         for (int x = 0; x < Tiles.Count; x++)
         {
@@ -54,7 +61,36 @@ public class Map
                 if (Tiles[x][y] == 0) continue;
                 var posX = y * TILE_SIZE;
                 var posY = x * TILE_SIZE;
-                var tex = Tiles[x][y] == 1 ? tile1tex : tile2tex;
+                switch (Tiles[x][y])
+                {
+                    case 1:
+                        tex = tile1tex;
+                        break;
+                    case 2:
+                        tex = tile2tex;
+                        break;
+                    case 3:
+                        tex = tile3tex;
+                        break;
+                    case 4:
+                        tex = tile4tex;
+                        break;
+                    case 5:
+                        tex = tile5tex;
+                        break;
+                    case 6:
+                        tex = tile6tex;
+                        break;
+                    case 7:
+                        tex = tile7tex;
+                        break;
+                    case 8:
+                        tex = tile8tex;
+                        break;
+                    default:
+                        continue;
+                }
+
                 Colliders[x, y] = new(posX, posY, TILE_SIZE, TILE_SIZE);
 
                 Globals.SpriteBatch.Draw(tex, new Vector2(posX, posY), Color.White);
@@ -95,76 +131,3 @@ public class Map
         Globals.SpriteBatch.Draw(_target, Vector2.Zero, Color.White);
     }
 }
-
-// using System;
-// using System.Collections.Generic;
-// using System.IO;
-// using Microsoft.Xna.Framework;
-// using Microsoft.Xna.Framework.Graphics;
-
-// namespace MarioClone.Moldels;
-
-// public class Map
-// {
-//     public readonly RenderTarget2D Target;
-//     public static readonly int TILE_SIZE = 16;
-
-//     public static readonly List<List<int>> Tiles = new();
-
-//     private static void GetTileMap()
-//     {
-//         var path = "Content/tilemap";
-
-//         foreach (var line in File.ReadLines(path))
-//         {
-//             var tileList = new List<int>();
-//             foreach (var tileString in line.Split(","))
-//             {
-
-//                 if (!string.IsNullOrEmpty(tileString))
-//                     tileList.Add(int.Parse(tileString));
-//             }
-//             Tiles.Add(tileList);
-//         }
-//     }
-
-//     public Map()
-//     {
-//         GetTileMap();
-
-//         Target = new(Globals.GraphicsDevice, Tiles.Count * TILE_SIZE, Tiles[0].Count * TILE_SIZE);
-//         var tileTexture = Globals.Content.Load<Texture2D>("assets/world_tiles");
-//         Tileset tileset = new(tileTexture, 16, 8);
-
-//         Globals.GraphicsDevice.SetRenderTarget(Target);
-//         Globals.GraphicsDevice.Clear(Color.Transparent);
-//         Globals.SpriteBatch.Begin();
-
-//         for (var y = 0; y < Tiles.Count; y++)
-//         {
-//             for (var x = 0; x < Tiles.Count; x++)
-//             {
-//                 if (Tiles[x][y] == 0) continue;
-//                 var posX = x * TILE_SIZE;
-//                 var posY = y * TILE_SIZE;
-
-//                 switch (Tiles[x][y])
-//                 {
-//                     case 1:
-//                         tileset.Draw(0, 0);
-//                         break;
-//                     case 2:
-//                         tileset.Draw(16, 16);
-//                         break;
-//                     default:
-//                         continue;
-//                 }
-//             }
-//         }
-//     }
-
-//     public void Draw()
-//     {
-//         Globals.SpriteBatch.Draw(Target, Vector2.Zero, Color.White);
-//     }
-// }
