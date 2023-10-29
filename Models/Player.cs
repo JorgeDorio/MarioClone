@@ -1,99 +1,87 @@
-// using System;
-// using MarioClone.Managers;
-// using Microsoft.Xna.Framework;
-// using Microsoft.Xna.Framework.Graphics;
-// using Microsoft.Xna.Framework.Input;
+using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
-// namespace MarioClone.Moldels;
+namespace MarioClone.Moldels;
 
-// public class Player
-// {
-//     private static Texture2D _texture;
-//     public Vector2 Position;
-//     public Rectangle Frame;
-//     private readonly float _speed = 400f;
-//     private float _gravity = 580f;
-//     private bool _isJumping;
-//     private float _jumpSpeed = 580f;
-//     private float _verticalVelocity;
-//     private float groundLevel = Globals.Graphics.PreferredBackBufferHeight - 192;
-//     public float HorizontalVelocity { get; set; }
-//     private Vector2 _previousPosition;
-//     public Vector2 PreviousPosition => _previousPosition;
-//     public bool CanMove { get; set; } = true;
+public class Player : Sprite
+{
+    private const float SPEED = 100f;
+    private const float GRAVITY = 625f;
+    private const float JUMP = 300f;
+    private const int OFFSET = 0;
+    private Vector2 _velocity;
+    private bool _onGround = true;
 
-//     public Player(Vector2 pos)
-//     {
-//         _texture ??= Globals.Content.Load<Texture2D>("assets/player_stopped");
-//         Position = pos;
-//         Frame = new Rectangle(0, 0, 16, 16);
-//         _isJumping = false;
-//         _verticalVelocity = 0f;
+    public Player() : base(Globals.Content.Load<Texture2D>("assets/player_stopped"), new(32, 240 - 60))
+    {
+    }
 
-//     }
+    private Rectangle CalculateBounds(Vector2 pos)
+    {
+        return new((int)pos.X, (int)pos.Y, Texture.Width, Texture.Height);
+    }
 
-//     public void Draw()
-//     {
-//         Globals.SpriteBatch.Draw(_texture, Position, Frame, Color.White, 0, Vector2.Zero, new Vector2(4, 4), SpriteEffects.None, 1);
-//     }
+    private void UpdatePosition()
+    {
+        _onGround = false;
+        var newPos = Position + (_velocity * Globals.Time);
+        Rectangle newRect = CalculateBounds(newPos);
 
-//     public void Update()
-//     {
-//         var keyboardState = Keyboard.GetState();
-//         if (InputManager.Moving && CanMove) // Check CanMove before allowing movement
-//         {
-//             Position += Vector2.Normalize(InputManager.Direction) * _speed * Globals.TotalSeconds;
-//         }
-//         _previousPosition = Position;
+        foreach (var collider in Map.GetNearestColliders(newRect))
+        {
+            if (newPos.X != Position.X)
+            {
+                newRect = CalculateBounds(new(newPos.X, Position.Y));
+                if (newRect.Intersects(collider))
+                {
+                    if (newPos.X > Position.X) newPos.X = collider.Left - Texture.Width + OFFSET;
+                    else newPos.X = collider.Right - OFFSET;
+                    continue;
+                }
+            }
 
-//         if (InputManager.Moving)
-//         {
-//             Position += Vector2.Normalize(InputManager.Direction) * _speed * Globals.TotalSeconds;
+            newRect = CalculateBounds(new(Position.X, newPos.Y));
+            if (newRect.Intersects(collider))
+            {
+                if (_velocity.Y > 0)
+                {
+                    newPos.Y = collider.Top - Texture.Height;
+                    _onGround = true;
+                    _velocity.Y = 0;
+                }
+                else
+                {
+                    newPos.Y = collider.Bottom;
+                    _velocity.Y = 0;
+                }
+            }
+        }
 
-//         }
+        Position = newPos;
+    }
 
-//         if (InputManager.Jump && !_isJumping)
-//         {
-//             _isJumping = true;
-//             _verticalVelocity -= _jumpSpeed;
-//         }
+    private void UpdateVelocity()
+    {
+        var keyboardState = Keyboard.GetState();
 
+        if (keyboardState.IsKeyDown(Keys.A)) _velocity.X = -SPEED;
+        else if (keyboardState.IsKeyDown(Keys.D)) _velocity.X = SPEED;
+        else _velocity.X = 0;
 
-//         if (keyboardState.GetPressedKeyCount() > 0)
-//         {
-//             if (keyboardState.IsKeyDown(Keys.A))
-//             {
-//                 if (HorizontalVelocity > -8)
-//                     HorizontalVelocity -= 2f;
-//             }
-//             if (keyboardState.IsKeyDown(Keys.D))
-//             {
-//                 if (HorizontalVelocity < 8)
-//                     HorizontalVelocity += 2f;
-//                 if (Position.X < 400)
-//                 {
-//                     Position.X += 2f;
-//                 }
-//             }
-//         }
-//         else
-//         {
-//             if (HorizontalVelocity > 0) HorizontalVelocity--;
-//             if (HorizontalVelocity < 0) HorizontalVelocity++;
-//         }
+        if (!_onGround) _velocity.Y += GRAVITY * Globals.Time;
 
-//         if (_isJumping)
-//         {
-//             // Apply gravity
-//             _verticalVelocity += _gravity * Globals.TotalSeconds;
-//             Position.Y += _verticalVelocity * Globals.TotalSeconds;
+        if (keyboardState.IsKeyDown(Keys.W) && _onGround)
+        {
+            _velocity.Y = -JUMP;
+            _onGround = false;
+        }
+    }
 
-//             // Check for landing
-//             if (Position.Y >= groundLevel)
-//             {
-//                 Position.Y = groundLevel;
-//                 _isJumping = false;
-//             }
-//         }
-//     }
-// }
+    public void Update()
+    {
+        UpdateVelocity();
+        UpdatePosition();
+    }
+}

@@ -1,28 +1,27 @@
 using MarioClone;
 using MarioClone.Moldels;
-using Microsoft.Xna.Framework.Graphics;
 
 public class GameManager
 {
     private readonly Map _map;
-    // private readonly Hero _hero;
+    private readonly Player _player;
 
     public GameManager()
     {
         _map = new();
-        // _hero = new(Globals.Content.Load<Texture2D>("hero"), new(Globals.WindowSize.X / 2, 200));
+        _player = new();
     }
 
     public void Update()
     {
-        // _hero.Update();
+        _player.Update();
     }
 
     public void Draw()
     {
         Globals.SpriteBatch.Begin();
         _map.Draw();
-        // _hero.Draw();
+        _player.Draw();
         Globals.SpriteBatch.End();
     }
 }
