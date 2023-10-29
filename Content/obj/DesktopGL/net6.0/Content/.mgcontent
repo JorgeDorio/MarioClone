@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/home/dorio/dev/MarioClone/Content/assets/player_stopped.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/player_walking.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/player.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world_colision.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world_tiles.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile1.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile2.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile3.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile4.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile5.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile6.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile7.png</File>
+    <File>/home/dorio/dev/MarioClone/Content/assets/world/tile8.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

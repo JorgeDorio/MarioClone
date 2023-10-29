@@ -1,0 +1,49 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Content/tilemap.tmx",
+    "expandedProjectPaths": [
+        "bin",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "#world": {
+            "scaleInDock": 1
+        },
+        "Content/tilemap.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 166.5,
+                "y": 111
+            }
+        },
+        "Content/tilemap.tmx#world_tiles": {
+            "scaleInDock": 5.5
+        }
+    },
+    "last.imagePath": "/home/dorio/dev/MarioClone/Content/assets",
+    "map.height": 15,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 211,
+    "openFiles": [
+        "Content/tilemap.tmx"
+    ],
+    "project": "world.tiled-project",
+    "recentFiles": [
+        "Content/tilemap.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

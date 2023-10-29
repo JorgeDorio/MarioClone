@@ -1,0 +1,15 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/dorio/dev/MarioClone/Content/assets/player_stopped.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_stopped.xnb","TextureProcessor","Texture2DContent",9172,1109,0.1591492
+"/home/dorio/dev/MarioClone/Content/assets/player_walking.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_walking.xnb","TextureProcessor","Texture2DContent",9558,3157,0.1275037
+"/home/dorio/dev/MarioClone/Content/assets/player.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player.xnb","TextureProcessor","Texture2DContent",50319,1018581,0.1876755
+"/home/dorio/dev/MarioClone/Content/assets/world_colision.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world_colision.xnb","TextureProcessor","Texture2DContent",11133,6482005,0.3000752
+"/home/dorio/dev/MarioClone/Content/assets/world_tiles.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world_tiles.xnb","TextureProcessor","Texture2DContent",1064,8277,0.1403419
+"/home/dorio/dev/MarioClone/Content/assets/world.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world.xnb","TextureProcessor","Texture2DContent",26014,6482005,0.3084661
+"/home/dorio/dev/MarioClone/Content/assets/world/tile1.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile1.xnb","TextureProcessor","Texture2DContent",683,1109,0.1941737
+"/home/dorio/dev/MarioClone/Content/assets/world/tile2.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile2.xnb","TextureProcessor","Texture2DContent",671,1109,0.002113
+"/home/dorio/dev/MarioClone/Content/assets/world/tile3.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile3.xnb","TextureProcessor","Texture2DContent",645,1109,0.0006638
+"/home/dorio/dev/MarioClone/Content/assets/world/tile4.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile4.xnb","TextureProcessor","Texture2DContent",581,1109,0.0004993
+"/home/dorio/dev/MarioClone/Content/assets/world/tile5.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile5.xnb","TextureProcessor","Texture2DContent",594,1109,0.0005469
+"/home/dorio/dev/MarioClone/Content/assets/world/tile6.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile6.xnb","TextureProcessor","Texture2DContent",593,1109,0.0005383
+"/home/dorio/dev/MarioClone/Content/assets/world/tile7.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile7.xnb","TextureProcessor","Texture2DContent",583,1109,0.0006447
+"/home/dorio/dev/MarioClone/Content/assets/world/tile8.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world/tile8.xnb","TextureProcessor","Texture2DContent",560,1109,0.000628
