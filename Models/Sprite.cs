@@ -13,10 +13,10 @@ public class Sprite
     {
         Texture = texture;
         Position = position;
-        Origin = new(Texture.Width / 2, Texture.Height / 2);
+        Origin = new(Texture.Width / 8, Texture.Height / 2);
     }
 
-    public void Draw()
+    public virtual void Draw()
     {
         Globals.SpriteBatch.Draw(Texture, Position, Color.White);
     }

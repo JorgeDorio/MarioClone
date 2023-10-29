@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>/home/dorio/dev/MarioClone/Content/assets/player_walking.png</SourceFile>
-  <SourceTime>2023-10-25T21:03:56.7074775-03:00</SourceTime>
+  <SourceTime>2023-10-29T19:25:15.5719868-03:00</SourceTime>
   <DestFile>/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_walking.xnb</DestFile>
-  <DestTime>2023-10-25T21:32:32.5745694-03:00</DestTime>
+  <DestTime>2023-10-29T19:25:38.0586233-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T08:44:56-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

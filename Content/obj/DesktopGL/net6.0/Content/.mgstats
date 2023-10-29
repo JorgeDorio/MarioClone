@@ -1,6 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/dorio/dev/MarioClone/Content/assets/player_stopped.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_stopped.xnb","TextureProcessor","Texture2DContent",9172,1109,0.1591492
-"/home/dorio/dev/MarioClone/Content/assets/player_walking.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_walking.xnb","TextureProcessor","Texture2DContent",9558,3157,0.1275037
+"/home/dorio/dev/MarioClone/Content/assets/player_walking.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player_walking.xnb","TextureProcessor","Texture2DContent",963,4181,0.1437258
 "/home/dorio/dev/MarioClone/Content/assets/player.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/player.xnb","TextureProcessor","Texture2DContent",50319,1018581,0.1876755
 "/home/dorio/dev/MarioClone/Content/assets/world_colision.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world_colision.xnb","TextureProcessor","Texture2DContent",11133,6482005,0.3000752
 "/home/dorio/dev/MarioClone/Content/assets/world_tiles.png","/home/dorio/dev/MarioClone/Content/bin/DesktopGL/Content/assets/world_tiles.xnb","TextureProcessor","Texture2DContent",1064,8277,0.1403419
