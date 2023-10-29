@@ -19,9 +19,9 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // Globals.WindowSize = new(Map.Tiles[0].Count * Map.TILE_SIZE, Map.Tiles.Count * Map.TILE_SIZE);
-        _graphics.PreferredBackBufferWidth = 321;
-        _graphics.PreferredBackBufferHeight = 240;
+        Globals.WindowSize = new(320, 240);
+        _graphics.PreferredBackBufferWidth = Globals.WindowSize.X;
+        _graphics.PreferredBackBufferHeight = Globals.WindowSize.Y;
         _graphics.ApplyChanges();
 
         Globals.Content = Content;

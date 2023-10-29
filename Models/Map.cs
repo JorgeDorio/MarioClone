@@ -10,6 +10,7 @@ namespace MarioClone.Moldels;
 public class Map
 {
     private readonly RenderTarget2D _target;
+    public Point MapSize { get; private set; }
     public static readonly int TILE_SIZE = 16;
 
     public static readonly List<List<int>> Tiles = new();
@@ -36,6 +37,8 @@ public class Map
     public Map()
     {
         GetTileMap();
+        MapSize = new(Tiles[0].Count * TILE_SIZE, Tiles.Count * TILE_SIZE);
+
         Colliders = new Rectangle[Tiles.Count, Tiles[0].Count];
 
         _target = new(Globals.GraphicsDevice, Tiles[0].Count * TILE_SIZE, Tiles.Count * TILE_SIZE);
